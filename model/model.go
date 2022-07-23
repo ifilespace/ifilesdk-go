@@ -104,7 +104,7 @@ type CreateFolderReq struct {
 	Uid     int    `json:"uid"`
 	PFileID string `json:"p_file_id"`
 	Name    string `json:"name"`
-	Special int    `json:"specail"`
+	Special int    `json:"special"`
 }
 type CreateFolderRet struct {
 	CommonRes
