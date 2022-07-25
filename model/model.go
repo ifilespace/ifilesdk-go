@@ -110,3 +110,21 @@ type CreateFolderRet struct {
 	CommonRes
 	Data string `json:"data"`
 }
+type DeleteFolderReq struct {
+	CommonReq
+	Uid    int    `json:"uid"`
+	FileID string `json:"fileid"`
+}
+type DeleteFolderRet struct {
+	CommonRes
+	Data string `json:"data"`
+}
+type CancelBindFolderReq struct {
+	CommonReq
+	Uid    int    `json:"uid"`
+	FileID string `json:"fileid"`
+}
+type CancelBindFolderRet struct {
+	CommonRes
+	Data string `json:"data"`
+}

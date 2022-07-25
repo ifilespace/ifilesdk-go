@@ -46,3 +46,11 @@ func (ifile *Ifile) CreateFolder(req *model.CreateFolderReq) (uinfo model.Create
 	uinfo, err = file.NewFiles(ifile.config).CreateFolder(req)
 	return
 }
+func (ifile *Ifile) DeleteFolder(req *model.DeleteFolderReq) (uinfo model.DeleteFolderRet, err error) {
+	uinfo, err = file.NewFiles(ifile.config).DeleteFolder(req)
+	return
+}
+func (ifile *Ifile) CancelBindFolder(req *model.CancelBindFolderReq) (uinfo model.CancelBindFolderRet, err error) {
+	uinfo, err = file.NewFiles(ifile.config).CancelBindFolder(req)
+	return
+}
