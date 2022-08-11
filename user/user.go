@@ -106,10 +106,10 @@ func (user *User) ChangePassword(uid int, password string) (ret model.CommonRes,
 	err = json.Unmarshal(res, &ret)
 	return
 }
-func (user *User) JoinProject(uid int, fileid string) (ret model.CommonRes, err error) {
+func (user *User) JoinProject(uid int, fileid string, auth string) (ret model.CommonRes, err error) {
 	now := time.Now().Unix()
 	sign := util.GetSignToken(user.config.Keyid, user.config.Keysecret, now)
-	req := &model.JLProjectReq{Uid: uid, Fileid: fileid}
+	req := &model.JLProjectReq{Uid: uid, Fileid: fileid, Auth: auth}
 	req.Keyid = user.config.Keyid
 	req.Date = now
 	res, err := util.PostJSON(user.config.Url+"/bapi/user/joinproject?sign="+sign, req)

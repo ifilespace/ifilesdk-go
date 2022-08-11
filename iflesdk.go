@@ -42,8 +42,8 @@ func (ifile *Ifile) ChangePassword(uid int, password string) (uinfo model.Common
 	uinfo, err = user.NewUser(ifile.config).ChangePassword(uid, password)
 	return
 }
-func (ifile *Ifile) JoinProject(uid int, fileid string) (uinfo model.CommonRes, err error) {
-	uinfo, err = user.NewUser(ifile.config).JoinProject(uid, fileid)
+func (ifile *Ifile) JoinProject(uid int, fileid string, auth string) (uinfo model.CommonRes, err error) {
+	uinfo, err = user.NewUser(ifile.config).JoinProject(uid, fileid, auth)
 	return
 }
 func (ifile *Ifile) LeaveProject(uid int, fileid string) (uinfo model.CommonRes, err error) {

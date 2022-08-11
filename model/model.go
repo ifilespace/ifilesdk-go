@@ -61,6 +61,7 @@ type JLProjectReq struct {
 	CommonReq
 	Uid    int    `json:"uid"`
 	Fileid string `json:"fileid"`
+	Auth   string `json:"auth"`
 }
 type Userinfo struct {
 	ID            int    `json:"id"`
