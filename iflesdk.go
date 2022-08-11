@@ -22,6 +22,10 @@ func (ifile *Ifile) GetUserInfo(uid int) (uinfo model.GetUserInfoRet, err error)
 	uinfo, err = user.NewUser(ifile.config).GetUserInfo(uid)
 	return
 }
+func (ifile *Ifile) GetProjectToken(uid int, fileid string) (uinfo model.GetUserTokenRet, err error) {
+	uinfo, err = user.NewUser(ifile.config).GetProjectToken(uid, fileid)
+	return
+}
 func (ifile *Ifile) GetUserToken(uid int) (uinfo model.GetUserTokenRet, err error) {
 	uinfo, err = user.NewUser(ifile.config).GetUserToken(uid)
 	return
@@ -36,6 +40,14 @@ func (ifile *Ifile) GetUsedCapacity(uid int) (uinfo model.GetUsedCapacityRet, er
 }
 func (ifile *Ifile) ChangePassword(uid int, password string) (uinfo model.CommonRes, err error) {
 	uinfo, err = user.NewUser(ifile.config).ChangePassword(uid, password)
+	return
+}
+func (ifile *Ifile) JoinProject(uid int, fileid string) (uinfo model.CommonRes, err error) {
+	uinfo, err = user.NewUser(ifile.config).JoinProject(uid, fileid)
+	return
+}
+func (ifile *Ifile) LeaveProject(uid int, fileid string) (uinfo model.CommonRes, err error) {
+	uinfo, err = user.NewUser(ifile.config).LeaveProject(uid, fileid)
 	return
 }
 func (ifile *Ifile) GetFileList(req *model.GetFileListReq) (uinfo model.GetFileListRet, err error) {

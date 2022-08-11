@@ -14,7 +14,11 @@ type GetUserInfoReq struct {
 	CommonReq
 	Uid int `json:"uid"`
 }
-
+type GetProjectTokenReq struct {
+	CommonReq
+	Uid    int    `json:"uid"`
+	Fileid string `json:"fileid"`
+}
 type GetUserInfoRet struct {
 	CommonRes
 	Data Userinfo `json:"data"`
@@ -52,6 +56,11 @@ type ChangePasswordReq struct {
 	CommonReq
 	Uid      int    `json:"uid"`
 	Password string `json:"password"`
+}
+type JLProjectReq struct {
+	CommonReq
+	Uid    int    `json:"uid"`
+	Fileid string `json:"fileid"`
 }
 type Userinfo struct {
 	ID            int    `json:"id"`
